@@ -1,0 +1,90 @@
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #486aae;
+  padding: 15px;
+
+  img{
+    size: 10px;
+    margin-top: 20px;
+    text-wrap: wrap;
+    color:#ffffff;
+    text-align:center;
+  }
+
+  .qr-code-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    position: relative; // To better control internal positioning
+
+    h2 {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .top-center-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #ffffff; // Ensure the image background matches the container
+      background-attachment: fixed;
+      // A subtle border under the image
+      width: 100%; // Ensures it fits the width of the parent box
+      padding: 10px 0; // Add padding for spacing around the image
+
+      img {
+        width: auto;
+        height: 150px; // Set a specific height to control image size
+        display: block;
+      }
+    }
+
+    .camera-feed, .camera-canvas {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .scan-button {
+      background-color: #486aae;
+      color: #ffffff;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #2e307a;
+      }
+
+      &.stop {
+        background-color: #e74c3c;
+
+        &:hover {
+          background-color: #c0392b;
+        }
+      }
+    }
+
+    .scan-actions {
+      margin-top: 20px;
+    }
+
+    .error-text {
+      color: #e74c3c;
+      margin-top: 10px;
+    }
+  }
+}
