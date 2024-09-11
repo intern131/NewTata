@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from "./auth/login/login.component";
-import { QrCodeScanComponent } from './auth/qr-code-scan/qr-code-scan.component';
 import { ConsumersComponent } from './consumers/consumers.component';
 import { ConsumerDashboardComponent } from './dashboard/consumer-dashboard/consumer-dashboard.component';
 import { DeviceInfoComponent } from './pages/consumer/device-info/device-info.component';
@@ -9,11 +8,12 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 import { FeedbackComponent } from './pages/consumer/feedback/feedback.component';
 import { AlertComponent } from './pages/consumer/alert/alert.component';
 import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
+import { QrScannerComponent } from './auth/qr-scanner/qr-scanner.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, ConsumersComponent,QrCodeScanComponent ,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent],
+  imports: [RouterOutlet, LoginComponent,QrScannerComponent,ConsumersComponent,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
