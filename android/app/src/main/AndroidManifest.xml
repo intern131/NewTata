@@ -15,6 +15,12 @@
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.CAMERA" />
+  <!-- Declare that the camera is not required -->
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+  <!-- If you use the front camera, declare it similarly -->
+  <uses-feature android:name="android.hardware.camera.front" android:required="false" />
+
 
   <application
     android:allowBackup="true"
