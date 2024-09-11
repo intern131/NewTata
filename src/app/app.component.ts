@@ -9,11 +9,12 @@ import { FeedbackComponent } from './pages/consumer/feedback/feedback.component'
 import { AlertComponent } from './pages/consumer/alert/alert.component';
 import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
 import { QrScannerComponent } from './auth/qr-scanner/qr-scanner.component';
+import { NavbarComponent } from './common/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent,QrScannerComponent,ConsumersComponent,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent],
+  imports: [RouterOutlet, LoginComponent,QrScannerComponent,ConsumersComponent,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
