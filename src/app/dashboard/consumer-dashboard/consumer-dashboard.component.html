@@ -15,6 +15,10 @@
   <!-- Profile dropdown menu -->
   <div class="profile-menu" [ngClass]="{ 'open': isProfileMenuOpen }">
     <ul>
+      <li (click)="closeProfileMenu()">
+        <img src="../../../assets/Back.svg" alt="Back Icon" />
+        <span>Back</span>
+      </li>
       <li>
         <img src="../../../assets/logo.png" alt="Settings Icon" />
         <span>Settings</span>
@@ -29,8 +33,9 @@
   <!-- Sidebar menu for the hamburger -->
   <div class="sidebar-menu" [ngClass]="{ 'open': isMenuOpen }">
     <ul>
-      <li >
-        <img src="../../../assets/Back.svg" [ngClass]="{ 'open': isMenuOpen }">
+      <!-- Back button -->
+      <li (click)="goBack()">
+        <img src="../../../assets/Back.svg" alt="Back Icon" />
         <span>Back</span>
       </li>
       <li routerLink="/deviceinfo">
@@ -84,5 +89,3 @@
     </div>
   </div>
 </div>
-
-
