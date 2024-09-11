@@ -16,15 +16,15 @@
   <div class="profile-menu" [ngClass]="{ 'open': isProfileMenuOpen }">
     <ul>
       <li (click)="closeProfileMenu()">
-        <img src="../../../assets/Back.svg" alt="Back Icon" />
-        <span>Back</span>
+        <img src="../../../assets/back-blue.svg" alt="Back Icon" />
+        <span class="text-blue-500">Back</span>
       </li>
       <li>
-        <img src="../../../assets/logo.png" alt="Settings Icon" />
+        <img src="../../../assets/Settinmg icon.svg" alt="Settings Icon" />
         <span>Settings</span>
       </li>
       <li>
-        <img src="../../../assets/logo.png" alt="Logout Icon" />
+        <img src="../../../assets/Log out icon.svg" alt="Logout Icon" />
         <span>Logout</span>
       </li>
     </ul>
@@ -35,8 +35,8 @@
     <ul>
       <!-- Back button -->
       <li (click)="goBack()">
-        <img src="../../../assets/Back.svg" alt="Back Icon" />
-        <span>Back</span>
+        <img src="../../../assets/back-blue.svg" alt="Back Icon" />
+        <span class="text-blue-500">Back</span>
       </li>
       <li routerLink="/deviceinfo">
         <img src="../../../assets/consumerdashboard/Group.svg" alt="Device Info Icon" />
@@ -59,18 +59,18 @@
 
   <!-- Card with flex containers -->
   <div class="user">
-    <h5>hello user,</h5>
+    <h5>Hey there,</h5>
   </div>
   <div class="dashboard-card">
     <div class="flex-container">
       <!-- Device Info -->
-      <div class="flex-item">
+      <div class="flex-item" routerLink="/deviceinfo">
         <img src="../../../assets/consumerdashboard/Group.svg" alt="Device Info Icon" />
         <h3>Device Info</h3>
       </div>
 
       <!-- Feedback -->
-      <div class="flex-item">
+      <div class="flex-item" routerLink="/feedback">
         <img src="../../../assets/consumerdashboard/Vector.svg" alt="Feedback Icon" />
         <h3>Feedback</h3>
       </div>
