@@ -29,6 +29,10 @@
   <!-- Sidebar menu for the hamburger -->
   <div class="sidebar-menu" [ngClass]="{ 'open': isMenuOpen }">
     <ul>
+      <li >
+        <img src="../../../assets/Back.svg" [ngClass]="{ 'open': isMenuOpen }">
+        <span>Back</span>
+      </li>
       <li routerLink="/deviceinfo">
         <img src="../../../assets/consumerdashboard/Group.svg" alt="Device Info Icon" />
         <span>Device Info</span>
@@ -67,13 +71,13 @@
       </div>
 
       <!-- Alert -->
-      <div class="flex-item">
+      <div class="flex-item" routerLink="/alert">
         <img src="../../../assets/consumerdashboard/Vector-1.svg" alt="Alert Icon" />
         <h3>Alert</h3>
       </div>
 
       <!-- Complaint -->
-      <div class="flex-item">
+      <div class="flex-item" routerLink="/complaint">
         <img src="../../../assets/consumerdashboard/Vector-2.svg" alt="Complaint Icon" />
         <h3>Complaint</h3>
       </div>
@@ -81,4 +85,4 @@
   </div>
 </div>
 
-<!-- dev channel  -->
+
