@@ -16,8 +16,8 @@
   <div class="profile-menu" [ngClass]="{ 'open': isProfileMenuOpen }">
     <ul>
       <li (click)="closeProfileMenu()">
-        <img src="../../../assets/Back.svg" alt="Back Icon" />
-        <span>Back</span>
+        <img src="../../../assets/back-blue.svg" alt="Back Icon" />
+        <span class="text-blue-500">Back</span>
       </li>
       <li>
         <img src="../../../assets/logo.png" alt="Settings Icon" />
@@ -35,8 +35,8 @@
     <ul>
       <!-- Back button -->
       <li (click)="goBack()">
-        <img src="../../../assets/Back.svg" alt="Back Icon" />
-        <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Back</button>
+        <img src="../../../assets/back-blue.svg" alt="Back Icon" />
+        <span class="text-blue-500">Back</span>
       </li>
       <li routerLink="/deviceinfo">
         <img src="../../../assets/consumerdashboard/Group.svg" alt="Device Info Icon" />
