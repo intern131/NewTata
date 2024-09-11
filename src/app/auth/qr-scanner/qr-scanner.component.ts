@@ -4,7 +4,6 @@ import { BrowserMultiFormatReader, Result } from '@zxing/library';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { BarcodeFormat, DecodeHintType} from '@zxing/library';
-//Hello
 
 @Component({
   selector: 'app-qr-scanner',
