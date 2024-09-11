@@ -1,10 +1,11 @@
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-consumer-dashboard',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './consumer-dashboard.component.html',
   styleUrls: ['./consumer-dashboard.component.scss']
 })

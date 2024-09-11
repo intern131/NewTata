@@ -6,11 +6,14 @@ import { ConsumersComponent } from './consumers/consumers.component';
 import { ConsumerDashboardComponent } from './dashboard/consumer-dashboard/consumer-dashboard.component';
 import { DeviceInfoComponent } from './pages/consumer/device-info/device-info.component';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { FeedbackComponent } from './pages/consumer/feedback/feedback.component';
+import { AlertComponent } from './pages/consumer/alert/alert.component';
+import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, ConsumersComponent,QrCodeScanComponent ,ConsumerDashboardComponent, DeviceInfoComponent],
+  imports: [RouterOutlet, LoginComponent, ConsumersComponent,QrCodeScanComponent ,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -26,26 +26,22 @@
     </ul>
   </div>
 
-  <div class="name">
-    <h5>Hey there..!</h5>
-  </div>
-
   <!-- Sidebar menu for the hamburger -->
   <div class="sidebar-menu" [ngClass]="{ 'open': isMenuOpen }">
     <ul>
-      <li>
+      <li routerLink="/deviceinfo">
         <img src="../../../assets/consumerdashboard/Group.svg" alt="Device Info Icon" />
         <span>Device Info</span>
       </li>
-      <li>
+      <li routerLink="/feedback">
         <img src="../../../assets/consumerdashboard/Vector.svg" alt="Feedback Icon" />
         <span>Feedback</span>
       </li>
-      <li>
+      <li routerLink="/alert">
         <img src="../../../assets/consumerdashboard/Vector-1.svg" alt="Alert Icon" />
         <span>Alert</span>
       </li>
-      <li>
+      <li routerLink="/complaint">
         <img src="../../../assets/consumerdashboard/Vector-2.svg" alt="Complaint Icon" />
         <span>Complaint</span>
       </li>
@@ -53,6 +49,9 @@
   </div>
 
   <!-- Card with flex containers -->
+  <div class="user">
+    <h5>hello user,</h5>
+  </div>
   <div class="dashboard-card">
     <div class="flex-container">
       <!-- Device Info -->
@@ -81,3 +80,4 @@
     </div>
   </div>
 </div>
+
