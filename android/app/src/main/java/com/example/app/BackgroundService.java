@@ -34,8 +34,11 @@ public class BackgroundService extends Service {
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
     Log.d("BackgroundService", "Service started");
+    
+    // Ensure Bluetooth state is checked again on restart
     checkInitialBluetoothState();
-    return START_STICKY;
+
+    return START_STICKY;  // Ensures service restarts if killed
   }
 
   @Override
