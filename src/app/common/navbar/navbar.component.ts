@@ -2,6 +2,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
