@@ -13,47 +13,56 @@ import { DeliveryGuyComponent } from './delivery-guy/delivery-guy.component';
 import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
-  { 
-    path: "", 
-    component: LoginComponent 
+
+  {
+    path:"", redirectTo:'login', pathMatch:'full'
   },
-  { 
-    path: 'qr-scanner', 
-    component: QrScannerComponent 
+
+  {
+    path: '',
+    component: LoginComponent,
+  },
+  {
+    path: 'qr-scanner',
+    component: QrScannerComponent,
   },
   {
     path: 'deliveryguy',
     canActivate: [AuthGuard],
-    component: DeliveryGuyComponent
+    component: DeliveryGuyComponent,
   },
   {
     path: 'admin',
     canActivate: [AuthGuard],
-    component: AdminComponent
+    component: AdminComponent,
   },
   {
     path: 'warehouse',
     canActivate: [AuthGuard],
-    component: WarehouseComponent
-  }
-  ,
-  { path: "consumers", 
-    component: ConsumersComponent 
+    component: WarehouseComponent,
   },
-  { path: "consumerdashboard", 
-    component: ConsumerDashboardComponent 
+  {
+    path: 'consumers',
+    component: ConsumersComponent,
   },
-  { path: "deviceinfo", 
-    component: DeviceInfoComponent 
+  {
+    path: 'consumerdashboard',
+    component: ConsumerDashboardComponent,
   },
-  { path: "feedback", 
-    component: FeedbackComponent
+  {
+    path: 'deviceinfo',
+    component: DeviceInfoComponent,
   },
-  { path: "alert", 
-    component: AlertComponent
+  {
+    path: 'feedback',
+    component: FeedbackComponent,
   },
-  { path: "complaint", 
-    component: ComplaintComponent
-  }
-
+  {
+    path: 'alert',
+    component: AlertComponent,
+  },
+  {
+    path: 'complaint',
+    component: ComplaintComponent,
+  },
 ];
