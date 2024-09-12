@@ -13,7 +13,10 @@
     <div #qrCodeContainer></div>
 
     <!-- Display scan result -->
-    <p *ngIf="scanResult" class="result">Scan Successful! Content: {{ scanResult }}</p>
+    <p *ngIf="scanResult">Scan Successful! Content: </p>
+    <div class="results">
+      <p>{{ scanResult }}</p>
+    </div>
 
     <!-- Display scanning options -->
     <div class="scan-actions">
