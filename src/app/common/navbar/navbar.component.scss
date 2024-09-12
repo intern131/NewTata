@@ -6,13 +6,16 @@
   background-color: #486aae;
   padding: 20px;
   position: relative;
+  width: 445px;
 
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 15px;
@@ -60,7 +63,7 @@
     }
   }
 
-  // Profile menu responsive styling
+
   .profile-menu {
     position: fixed;
     top: 0;
@@ -101,7 +104,7 @@
     }
   }
 
-  // Sidebar menu with flexbox, responsive to all screen sizes
+
   .sidebar-menu {
     position: fixed;
     top: 0;
@@ -145,7 +148,7 @@
     }
   }
 
-  // Overlay when sidebar or profile menu is open
+
   .overlay {
     position: fixed;
     top: 0;
@@ -164,38 +167,5 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: row;
-      max-width: 100%;
-    }
 
-    .sidebar-menu {
-      width: 180px;
-    }
-
-    .profile-menu {
-      width: 180px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .navbar {
-      padding: 8px;
-    }
-
-    .hamburger-button img,
-    .profile-button img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .sidebar-menu {
-      width: 160px;
-    }
-
-    .profile-menu {
-      width: 160px;
-    }
-  }
 }
