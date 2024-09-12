@@ -1,29 +1,25 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  //private _loginUrl = "https://gtl-infotech-project-backend.onrender.com/api/login";
+  private authTokenKey = 'authToken';
 
-  // constructor(private http : HttpClient,private _router : Router) { }
+  // Store a fake token in localStorage
+  storeToken(token: string): void {
+    localStorage.setItem(this.authTokenKey, token);
+  }
 
-  // loginUser(user : any) {
-  //   return this.http.post<any>(this._loginUrl,user);
-  // }
+  // Check if a token exists in localStorage (used to check if the user is authenticated)
+  isAuthenticated(): boolean {
+    const token = localStorage.getItem(this.authTokenKey);
+    return !!token;  // Return true if token exists
+  }
 
-  // logoutUser() {
-  //   localStorage.removeItem('token');
-  //   this._router.navigate(['/home']);
-  // }
-
-  // getToken() {
-  //   return localStorage.getItem('token');
-  // }
-
-  // loggedIn() {
-  //   return !!localStorage.getItem('token');
-  // }
+  // Log out the user by removing the token
+  logout(): void {
+    localStorage.removeItem(this.authTokenKey);
+    
+  }
 }

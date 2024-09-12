@@ -1,30 +1,58 @@
-
 <div class="login-container">
   <div class="top-center-image">
+    <!-- Update or remove this image tag -->
     <img src="../../../assets/Group 17.svg" alt="Decorative Image" />
   </div>
   <div class="login-box">
     <div class="login-header">
-      <img src="assets/tata-logo.png" alt="TATA Communications" class="tata-logo" />
+      <img src="../../../assets/tata-logo.png" alt="TATA Communications" class="tata-logo" />
     </div>
     <div class="login-content">
       <button class="sso-button" routerLink="qr-scanner">Scan Device (Consumer Login)</button>
       <p class="or-text">OR</p>
-      <form>
+      <!-- Reactive Form Starts Here -->
+      <form [formGroup]="loginForm" (ngSubmit)="LoginUser()">
         <div class="form-group">
-          <label for="username">User Name</label>
-          <input type="text" id="username" placeholder="User Name" />
+          <mat-form-field appearance="outline">
+            <input matInput placeholder="User Name" formControlName="username" />
+            <mat-error *ngIf="loginForm.get('username')?.hasError('required')">
+              Username is required
+            </mat-error>
+          </mat-form-field>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password" />
-          <span class="toggle-password">
-            <i class="icon-eye-off"></i>
-          </span>
+          <mat-form-field appearance="outline">
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              placeholder="Password"
+              formControlName="password"
+            />
+            <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+              Password is required
+            </mat-error>
+          </mat-form-field>
         </div>
-        <button class="login-button" type="submit">LOGIN</button>
+        <button
+          mat-raised-button
+          color="primary"
+          class="login-button"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          LOGIN
+        </button>
       </form>
+      <!-- End of Reactive Form -->
     </div>
   </div>
-  <img src="../../../assets/Group 42.svg" alt="">
+  <div class="bottom-image">
+    <!-- Update or remove this image tag -->
+    <br>
+    <img src="../../../assets/Group 42.svg" alt="Decorative Image" />
+    <br>
+  </div>
 </div>

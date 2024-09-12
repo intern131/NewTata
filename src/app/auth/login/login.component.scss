@@ -5,22 +5,13 @@
   flex-direction: column; // Stack image and login box vertically
   min-height: 100vh;
   background-color: #748fd8;
-  // background: linear-gradient( #4c70d3,#456cd8,#5d7ed6,#8099df);
   font-family: 'Arial', sans-serif;
   padding: 15px;
-  img{
-    size: 10px;
-    margin-top: 20px;
-    text-wrap: wrap;
-    color:#ffffff;
-    text-align:center;
-  }
 
   .top-center-image {
     display: flex;
     justify-content: center; // Center horizontally
     align-items: center;
-    // margin-top: 20px;
     margin-bottom: 20px;
 
     img {
@@ -77,24 +68,29 @@
         text-align: left;
         margin-bottom: 10px;
 
-        label {
-          font-size: 12px; // Mobile-optimized font size
-          color: #333;
-        }
-
-        input {
+        mat-form-field {
           width: 100%;
-          padding: 8px; // Adjusted padding for mobile
-          border: 1px solid #ddd;
-          border-radius: 5px;
-          margin-top: 5px;
-          font-size: 12px; // Reduced font size
-          color: #333;
-          transition: border-color 0.3s ease;
+          
+          .mat-form-field-appearance-outline .mat-form-field-outline {
+            border-color: transparent;
+          }
+        
+          .mat-input-element {
+            border: none; // Ensures no extra borders are applied
+          }
+        
+          .mat-form-field-flex {
+            border: none; // Removes potential borders around the input
+          }
+        }
+        
 
-          &:focus {
-            border-color: rgb(51, 51, 153); // Border changes to blue on focus
-            outline: none;
+        .toggle-password {
+          margin-left: -30px;
+          cursor: pointer;
+
+          mat-icon {
+            color: #333; // Set icon color
           }
         }
       }

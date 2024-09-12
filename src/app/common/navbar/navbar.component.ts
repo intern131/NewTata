@@ -1,7 +1,7 @@
-import { RouterLink } from '@angular/router';
+import { RouterLink,Router } from '@angular/router';
 import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +14,7 @@ export class NavbarComponent {
   isProfileMenuOpen = false;
   isMenuOpen = false;
 
-  constructor(private location: Location) {}
+  constructor(private location: Location,private _router : Router,private authService: AuthService) {}
 
   // Toggle profile dropdown menu
   toggleProfileMenu() {
@@ -29,6 +29,12 @@ export class NavbarComponent {
   // Toggle sidebar menu
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  LogOut() 
+  {
+    this.authService.logout();
+    this._router.navigate(['']);
   }
 
   // Back button functionality for sidebar menu
