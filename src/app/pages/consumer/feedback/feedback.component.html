@@ -1,1 +1,34 @@
-<p>feedback works!</p>
+<div class="feedback-container">
+  <app-navbar/>
+  <!-- Navbar with back button and header -->
+
+
+  <!-- Feedback Form -->
+  <div class="feedback-card">
+
+    <div class="feedback-form">
+      <div class="dropdown">
+        <h5 for="feedback-category">Feedback</h5>
+        <div class="top-center-image">
+          <img src="../../../assets/Illustration.svg" alt="Decorative Image" />
+        </div>
+        <select id="feedback-category">
+          <option value="General">General</option>
+          <option value="Technical">Delivery Guy</option>
+          <option value="Billing">About Product</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <textarea placeholder="Share your thoughts"></textarea>
+      </div>
+
+      <div class="file-upload">
+        <input type="file" id="file-upload" accept=".img, .pdf">
+        <label for="file-upload">Attach files (.img, .pdf)</label>
+      </div>
+
+      <button class="submit-button">Submit</button>
+    </div>
+  </div>
+</div>
