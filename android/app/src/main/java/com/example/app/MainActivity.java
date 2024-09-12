@@ -16,6 +16,8 @@ import com.getcapacitor.BridgeActivity;
 
 public class MainActivity extends BridgeActivity {
   private static final int PERMISSION_REQUEST_CODE = 1001;
+  private long backPressedTime;  // Variable to track the time when back button was pressed
+  private Toast backToast;       // Toast to inform user to press back again to exit
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -86,5 +88,19 @@ public class MainActivity extends BridgeActivity {
     } else {
       startService(serviceIntent);  // For versions below Android 8.0
     }
+  }
+
+  // Handle back button press
+  @Override
+  public void onBackPressed() {
+    if (backPressedTime + 2000 > System.currentTimeMillis()) {  // If back button is pressed twice within 2 seconds
+      backToast.cancel();  // Dismiss the toast
+      super.onBackPressed();  // Exit the app
+      return;
+    } else {
+      backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
+      backToast.show();  // Show message to the user
+    }
+    backPressedTime = System.currentTimeMillis();  // Record the time of back press
   }
 }

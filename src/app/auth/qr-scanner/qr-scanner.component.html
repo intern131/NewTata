@@ -6,11 +6,14 @@
     <h2>Scan QR Code</h2>
 
     <!-- Video feed for native scanning -->
-    <video #video class="camera-feed" *ngIf="isScanning"></video>
-    <canvas #canvas class="camera-canvas" *ngIf="isScanning"></canvas>
-
-    <!-- QR code container for web-based scanning -->
-    <div #qrCodeContainer></div>
+    <div class="scanner-wrapper">
+      <video #video class="camera-feed" *ngIf="isScanning"></video>
+      <!-- <canvas #canvas class="camera-canvas" *ngIf="isScanning"></canvas> -->
+      <!-- Custom scan border for better UI experience -->
+      <div class="scan-overlay" *ngIf="isScanning">
+        <img src="../../../assets/scan-border.svg" alt="Scan Border Image" />
+      </div>
+    </div>
 
     <!-- Display scan result -->
     <p *ngIf="scanResult" class="result">Scan Successful! Content: {{ scanResult }}</p>
@@ -22,7 +25,7 @@
     </div>
 
     <!-- Navigation button -->
-    <button class="scan-button" routerLink="/consumers" routerLinkActive="router-link-active">Next</button>
+    <button class="scan-button" [disabled]="isScanning || !scanResult" routerLink="/consumers" routerLinkActive="router-link-active">Next</button>
   </div>
   <img src="../../../assets/Group 42.svg" alt="">
 </div>
