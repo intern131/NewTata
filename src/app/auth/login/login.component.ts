@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
       // Simulate authentication check with hardcoded credentials
       if (username === this.demoUsername && password === this.demoPassword) {
         this.authService.storeToken('demo-token');  // Store a fake token locally
-        this.router.navigate(['/consumerdashboard']);  // Navigate to dashboard
+        this.router.navigate(['/admin']);  // Navigate to dashboard
       } else {
         this.loginError = 'Invalid username or password';  // Show error
       }

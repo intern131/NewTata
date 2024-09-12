@@ -8,6 +8,9 @@ import { AlertComponent } from './pages/consumer/alert/alert.component';
 import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
 import { QrScannerComponent } from './auth/qr-scanner/qr-scanner.component';
 import { AuthGuard } from './auth.guard';
+import { WarehouseComponent } from './warehouse/warehouse.component';
+import { DeliveryGuyComponent } from './delivery-guy/delivery-guy.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
   { 
@@ -18,11 +21,26 @@ export const routes: Routes = [
     path: 'qr-scanner', 
     component: QrScannerComponent 
   },
+  {
+    path: 'deliveryguy',
+    canActivate: [AuthGuard],
+    component: DeliveryGuyComponent
+  },
+  {
+    path: 'admin',
+    canActivate: [AuthGuard],
+    component: AdminComponent
+  },
+  {
+    path: 'warehouse',
+    canActivate: [AuthGuard],
+    component: WarehouseComponent
+  }
+  ,
   { path: "consumers", 
     component: ConsumersComponent 
   },
   { path: "consumerdashboard", 
-    canActivate: [AuthGuard],
     component: ConsumerDashboardComponent 
   },
   { path: "deviceinfo", 
