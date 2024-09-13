@@ -169,6 +169,16 @@
     }
   }
 
+  @media (max-width: 480px) {
+    width: 400px;
+    max-width: 100%;
 
+
+  }
+
+  @media(max-width: 375px){
+    width: 375px;
+    max-width: 100%;
+  }
 
 }
