@@ -14,8 +14,8 @@ export class ComplaintComponent
 {
   complaintForm: FormGroup;
   complaintHistory = [
-    { date: '10 Sep 2024', subject: 'Battery Issue', status: 'Pending' },
-    { date: '9 Aug 2024', subject: 'Connection Issue', status: 'Completed' },
+    { date: '10/09/2024', subject: 'Battery Issue', status: 'Pending' },
+    { date: '9/09/2024', subject: 'Connection Issue', status: 'Completed' },
   ];
 
   constructor(private fb: FormBuilder) {
