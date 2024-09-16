@@ -8,6 +8,9 @@ import { AlertComponent } from './pages/consumer/alert/alert.component';
 import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
 import { QrScannerComponent } from './auth/qr-scanner/qr-scanner.component';
 import { AuthGuard } from './auth.guard';
+import { WarehouseDashboardComponent } from './dashboard/warehouse-dashboard/warehouse-dashboard.component';
+import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { DeliveryguyDashboardComponent } from './dashboard/deliveryguy-dashboard/deliveryguy-dashboard.component';
 
 
 export const routes: Routes = [
@@ -48,4 +51,21 @@ export const routes: Routes = [
     path: 'complaint',
     component: ComplaintComponent,
   },
+
+
+  {
+    path: 'warehouse-dashboard',
+    component: WarehouseDashboardComponent
+  },
+
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent
+  },
+
+  {
+    path: 'delivery-dashboard',
+    component: DeliveryguyDashboardComponent
+  }
+
 ];

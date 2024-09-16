@@ -17,9 +17,17 @@ export class AuthService {
     return !!token;  // Return true if token exists
   }
 
+  getToken() {
+    return localStorage.getItem('authToken');
+  }
+
+  clearToken() {
+    localStorage.removeItem('authToken');
+  }
+
   // Log out the user by removing the token
   logout(): void {
     localStorage.removeItem(this.authTokenKey);
-    
+
   }
 }

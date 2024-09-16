@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
-import { ValidationService } from '../../validation.service';
 
 @Component({
   selector: 'app-login',
@@ -32,9 +31,15 @@ export class LoginComponent implements OnInit {
   hide: boolean = true;
   loginError: string | null = null;
 
-  // Hardcoded username and password for demo purposes
-  private demoUsername = 'test@demo12';
-  private demoPassword = 'password123';
+  // Hardcoded credentials for different users
+  private warehouseUsername = 'warehouse';
+  private warehousePassword = 'warehouse';
+
+  private adminUsername = 'admin';
+  private adminPassword = 'admin';
+
+  private deliveryUsername = 'delivery';
+  private deliveryPassword = 'delivery';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -56,13 +61,25 @@ export class LoginComponent implements OnInit {
   LoginUser() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
-      
-      // Simulate authentication check with hardcoded credentials
-      if (username === this.demoUsername && password === this.demoPassword) {
-        this.authService.storeToken('demo-token');  // Store a fake token locally
-        this.router.navigate(['/admin']);  // Navigate to dashboard
-      } else {
-        this.loginError = 'Invalid username or password';  // Show error
+
+      // Warehouse Login
+      if (username === this.warehouseUsername && password === this.warehousePassword) {
+        this.authService.storeToken('warehouse-token');  // Store a fake token
+        this.router.navigate(['/warehouse-dashboard']);  // Redirect to Warehouse Dashboard
+      }
+      // Admin Login
+      else if (username === this.adminUsername && password === this.adminPassword) {
+        this.authService.storeToken('admin-token');  // Store a fake token
+        this.router.navigate(['/admin-dashboard']);  // Redirect to Admin Dashboard
+      }
+      // Delivery Guy Login
+      else if (username === this.deliveryUsername && password === this.deliveryPassword) {
+        this.authService.storeToken('delivery-token');  // Store a fake token
+        this.router.navigate(['/delivery-dashboard']);  // Redirect to Delivery Dashboard
+      }
+      // Invalid Credentials
+      else {
+        this.loginError = 'Invalid username or password';
       }
     } else {
       this.loginError = 'Please fill in all required fields';
