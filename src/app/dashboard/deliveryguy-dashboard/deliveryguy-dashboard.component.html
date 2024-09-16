@@ -33,7 +33,7 @@
     <div
       class="delivery-card"
       *ngFor="let delivery of filteredDeliveries"
-      [routerLink]="['/delivery-details', delivery.id]"  <!-- RouterLink to the next page with the delivery ID -->
+      [routerLink]="['/qrscandelivery', delivery.id]"
       routerLinkActive="active-card"
     >
       <p class="delivery-name">{{ delivery.name }} <span class="delivery-id">ID: {{ delivery.id }}</span></p>
