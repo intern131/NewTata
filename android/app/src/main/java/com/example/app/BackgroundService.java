@@ -34,7 +34,7 @@ public class BackgroundService extends Service {
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
     Log.d("BackgroundService", "Service started");
-    
+
     // Ensure Bluetooth state is checked again on restart
     checkInitialBluetoothState();
 
@@ -63,7 +63,7 @@ public class BackgroundService extends Service {
     PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE);
 
     NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-      .setContentTitle("Tata Services")
+      .setContentTitle("TCL")
       .setContentText("Services are running in the background.")
       .setSmallIcon(R.drawable.ic_notification)
       .setContentIntent(pendingIntent)
@@ -96,10 +96,10 @@ public class BackgroundService extends Service {
       if (BluetoothAdapter.ACTION_STATE_CHANGED.equals(intent.getAction())) {
         int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
         if (state == BluetoothAdapter.STATE_ON) {
-          updateForegroundNotification("Tata Services", "Services are running in the background.");
+          updateForegroundNotification("TCL", "Services are running in the background.");
           removeBluetoothNotification();
         } else if (state == BluetoothAdapter.STATE_OFF) {
-          updateForegroundNotification("Tata Services - Bluetooth Alert", "Please turn on your Bluetooth.");
+          updateForegroundNotification("TCL - Bluetooth Alert", "Please turn on your Bluetooth.");
           sendBluetoothNotification();
         }
       }
@@ -109,10 +109,10 @@ public class BackgroundService extends Service {
   private void checkInitialBluetoothState() {
     if (bluetoothAdapter != null) {
       if (bluetoothAdapter.isEnabled()) {
-        updateForegroundNotification("Tata Services", "Services are running in the background.");
+        updateForegroundNotification("TCL", "Services are running in the background.");
         removeBluetoothNotification();
       } else {
-        updateForegroundNotification("Tata Services - Bluetooth Alert", "Please turn on your Bluetooth.");
+        updateForegroundNotification("TCL - Bluetooth Alert", "Please turn on your Bluetooth.");
         sendBluetoothNotification();
       }
     }
@@ -120,7 +120,7 @@ public class BackgroundService extends Service {
 
   private void sendBluetoothNotification() {
     NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-      .setContentTitle("Tata Services - Bluetooth Alert")
+      .setContentTitle("TCL - Bluetooth Alert")
       .setContentText("Please turn on your Bluetooth.")
       .setSmallIcon(R.drawable.ic_notification)
       .setPriority(NotificationCompat.PRIORITY_HIGH)
