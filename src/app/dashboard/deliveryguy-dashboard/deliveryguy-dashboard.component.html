@@ -29,12 +29,12 @@
 
   <!-- Delivery List -->
   <div class="delivery-list">
-    <!-- Pending delivery list items are clickable -->
+    <!-- Pending and Completed deliveries -->
     <div
       class="delivery-card"
       *ngFor="let delivery of filteredDeliveries"
-      [routerLink]="['/qrscandelivery', delivery.id]"
-      routerLinkActive="active-card"
+      [ngClass]="{'clickable': delivery.status === 'pending'}"
+      [routerLink]="delivery.status === 'pending' ? ['/qrdelivery', delivery.id] : null"
     >
       <p class="delivery-name">{{ delivery.name }} <span class="delivery-id">ID: {{ delivery.id }}</span></p>
       <p class="delivery-address">

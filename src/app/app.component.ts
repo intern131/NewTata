@@ -10,11 +10,12 @@ import { AlertComponent } from './pages/consumer/alert/alert.component';
 import { ComplaintComponent } from './pages/consumer/complaint/complaint.component';
 import { QrScannerComponent } from './auth/qr-scanner/qr-scanner.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
+import { QrCodeScanComponent } from './pages/delivery/qr-code-scan/qr-code-scan.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent,QrScannerComponent,ConsumersComponent,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent, NavbarComponent],
+  imports: [RouterOutlet, LoginComponent,QrScannerComponent,ConsumersComponent,ConsumerDashboardComponent, DeviceInfoComponent, FeedbackComponent, AlertComponent, ComplaintComponent, NavbarComponent, QrCodeScanComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

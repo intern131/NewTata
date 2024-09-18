@@ -11,6 +11,7 @@ import { AuthGuard } from './auth.guard';
 import { WarehouseDashboardComponent } from './dashboard/warehouse-dashboard/warehouse-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { DeliveryguyDashboardComponent } from './dashboard/deliveryguy-dashboard/deliveryguy-dashboard.component';
+import { QrCodeScanComponent } from './pages/delivery/qr-code-scan/qr-code-scan.component';
 
 
 export const routes: Routes = [
@@ -66,6 +67,9 @@ export const routes: Routes = [
   {
     path: 'delivery-dashboard',
     component: DeliveryguyDashboardComponent
+  },
+  {path: 'qrdelivery',
+    component: QrCodeScanComponent
   }
 
 ];
