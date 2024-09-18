@@ -34,7 +34,7 @@
       class="delivery-card"
       *ngFor="let delivery of filteredDeliveries"
       [ngClass]="{'clickable': delivery.status === 'pending'}"
-      [routerLink]="delivery.status === 'pending' ? ['/qrdelivery', delivery.id] : null"
+      routerLink="delivery.status === 'pending' ? ['/qrdelivery', delivery.id] : null"
     >
       <p class="delivery-name">{{ delivery.name }} <span class="delivery-id">ID: {{ delivery.id }}</span></p>
       <p class="delivery-address">
