@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { AuthService } from '../../auth.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hide: boolean = true;
   loginError: string | null = null;
-
+  
   // Hardcoded credentials for different users
   private warehouseUsername = 'warehouse';
   private warehousePassword = 'warehouse';
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private _snackBar : MatSnackBar
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
@@ -80,6 +82,9 @@ export class LoginComponent implements OnInit {
       // Invalid Credentials
       else {
         this.loginError = 'Invalid username or password';
+        this._snackBar.open(this.loginError, 'ok', {
+          duration: 2000, // 5000 milliseconds = 5 seconds
+        });
       }
     } else {
       this.loginError = 'Please fill in all required fields';
