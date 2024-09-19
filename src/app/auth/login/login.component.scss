@@ -12,10 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px; // Reduced margin to decrease top spacing
+    margin-bottom: 10px;
 
     img {
-      width: 150px; // Slightly reduced width to decrease top spacing
+      width: 150px;
       height: auto;
     }
   }
@@ -71,7 +71,7 @@
         mat-form-field {
           width: 100%;
 
-          .mat-form-field-appearance-outline .mat-form-field-outline {
+          .mat-form-field-outline {
             border-color: transparent;
           }
 
@@ -84,11 +84,11 @@
           }
         }
 
-        .toggle-password {
+        .mat-icon-button {
           margin-left: -30px;
           cursor: pointer;
 
-          mat-icon {
+          .mat-icon {
             color: #333;
           }
         }
@@ -108,16 +108,21 @@
         &:hover {
           background-color: #2e307a;
         }
+
+        &:disabled {
+          background-color: #cccccc;
+          cursor: not-allowed;
+        }
       }
     }
   }
 
   .bottom-image {
-    margin-top: 10px; // Added margin to separate from login box
+    margin-top: 10px;
 
     img {
       width: 100%;
-      max-width: 300px; // Adjust as needed
+      max-width: 300px;
       height: auto;
     }
   }

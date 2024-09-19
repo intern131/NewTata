@@ -14,13 +14,12 @@ import { DeliveryguyDashboardComponent } from './dashboard/deliveryguy-dashboard
 import { QrCodeScanComponent } from './pages/delivery/qr-code-scan/qr-code-scan.component';
 import { AuthGuard } from './auth.guard';
 
-
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'qr-scanner', component: QrScannerComponent },
   { path: 'consumers', component: ConsumersComponent, canActivate: [AuthGuard] },
-  { path: 'consumerdashboard', component: ConsumerDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'consumer-dashboard', component: ConsumerDashboardComponent, canActivate: [AuthGuard] },
   { path: 'deviceinfo', component: DeviceInfoComponent, canActivate: [AuthGuard] },
   { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
   { path: 'alert', component: AlertComponent, canActivate: [AuthGuard] },
@@ -29,7 +28,6 @@ export const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
   { path: 'delivery-dashboard', component: DeliveryguyDashboardComponent, canActivate: [AuthGuard] },
   { path: 'qrdelivery/:id', component: QrCodeScanComponent, canActivate: [AuthGuard] },
-
 ];
 
 @NgModule({

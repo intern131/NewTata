@@ -1,33 +1,31 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private authTokenKey = 'authToken';
+  constructor(private router: Router) {}
 
-  // Store a fake token in localStorage
-  storeToken(token: string): void {
-    localStorage.setItem(this.authTokenKey, token);
+  // Store token in local storage
+  storeToken(token: string) {
+    localStorage.setItem('token', token);
   }
 
-  // Check if a token exists in localStorage (used to check if the user is authenticated)
-  isAuthenticated(): boolean {
-    const token = localStorage.getItem(this.authTokenKey);
-    return !!token;  // Return true if token exists
+  // Set current user in local storage
+  setCurrentUser(user: { username: string; role: string }) {
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
-  getToken() {
-    return localStorage.getItem('authToken');
+  // Get current user
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem('user') || 'null');
   }
 
-  clearToken() {
-    localStorage.removeItem('authToken');
-  }
-
-  // Log out the user by removing the token
-  logout(): void {
-    localStorage.removeItem(this.authTokenKey);
-
+  // Logout user
+  logout() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 }

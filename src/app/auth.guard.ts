@@ -8,12 +8,21 @@ import { AuthService } from './auth.service';
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(): boolean {
-    if (this.authService.isAuthenticated()) {
-      return true;
-    } else {
-      this.router.navigate(['/login']);  // Redirect to login if not authenticated
+  canActivate(route: any): boolean {
+    const currentUser = this.authService.getCurrentUser();
+
+    if (!currentUser) {
+      this.router.navigate(['/login']); // Redirect to login if not authenticated
       return false;
     }
+
+    const expectedRole = route.data.expectedRole;
+
+    if (currentUser.role !== expectedRole) {
+      this.router.navigate(['/login']); // Redirect to login if role does not match
+      return false;
+    }
+
+    return true; // Allow navigation if authenticated and role matches
   }
 }
