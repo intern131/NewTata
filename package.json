@@ -31,10 +31,10 @@
     "@ionic-native/camera": "^5.36.0",
     "@ionic-native/core": "^5.36.0",
     "@zxing/library": "^0.21.3",
-    "firebase": "^10.13.1",
+    "firebase": "^10.13.2",
     "html5-qrcode": "^2.3.8",
     "ngx-mqtt": "^17.0.0",
-    "rxjs": "^7.8.0",
+    "rxjs": "^6.6.7",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
   },
