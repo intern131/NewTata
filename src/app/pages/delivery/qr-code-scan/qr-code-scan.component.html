@@ -24,7 +24,7 @@
     <!-- Display scanning options -->
     <div class="scan-actions">
       <button *ngIf="!isScanning && !scanResult" (click)="startScan()" class="scan-button">Start Scan</button>
-      <!-- <button *ngIf="isScanning" (click)="stopScan()" class="scan-button stop">Stop Scanning</button> -->
+      <button *ngIf="isScanning" (click)="stopScan()" class="scan-button stop">Stop Scanning</button>
 
     </div>
 
