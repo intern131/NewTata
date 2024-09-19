@@ -14,24 +14,17 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
-    MatIconModule,
-    CommonModule,
-    RouterLink
-  ],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  imports: [FormsModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, CommonModule
+
+  ],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hide: boolean = true;
   loginError: string | null = null;
-  
+
   // Hardcoded credentials for different users
   private warehouseUsername = 'warehouse';
   private warehousePassword = 'warehouse';
@@ -46,48 +39,53 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private _snackBar : MatSnackBar
+    private _snackBar: MatSnackBar
   ) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
     });
   }
 
   ngOnInit(): void {}
 
+  // Toggle password visibility
   togglePasswordVisibility() {
     this.hide = !this.hide;
   }
 
+  // Handle user login
   LoginUser() {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
 
       // Warehouse Login
       if (username === this.warehouseUsername && password === this.warehousePassword) {
-        this.authService.storeToken('warehouse-token');  // Store a fake token
+        this.authService.storeToken('warehouse-token');  // Store token in localStorage
         this.router.navigate(['/warehouse-dashboard']);  // Redirect to Warehouse Dashboard
       }
       // Admin Login
       else if (username === this.adminUsername && password === this.adminPassword) {
-        this.authService.storeToken('admin-token');  // Store a fake token
+        this.authService.storeToken('admin-token');  // Store token in localStorage
         this.router.navigate(['/admin-dashboard']);  // Redirect to Admin Dashboard
       }
       // Delivery Guy Login
       else if (username === this.deliveryUsername && password === this.deliveryPassword) {
-        this.authService.storeToken('delivery-token');  // Store a fake token
+        this.authService.storeToken('delivery-token');  // Store token in localStorage
         this.router.navigate(['/delivery-dashboard']);  // Redirect to Delivery Dashboard
       }
-      // Invalid Credentials
+      // Invalid credentials
       else {
         this.loginError = 'Invalid username or password';
-        this._snackBar.open(this.loginError, 'ok', {
-          duration: 2000, // 5000 milliseconds = 5 seconds
+        this._snackBar.open(this.loginError, 'OK', {
+          duration: 2000,
         });
       }
     } else {
       this.loginError = 'Please fill in all required fields';
+      this._snackBar.open(this.loginError, 'OK', {
+        duration: 2000,
+      });
     }
   }
 }
