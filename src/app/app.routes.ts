@@ -1,3 +1,4 @@
+// app.routes.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
@@ -16,18 +17,82 @@ import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+
   { path: 'login', component: LoginComponent },
-  { path: 'qr-scanner', component: QrScannerComponent },
-  { path: 'consumers', component: ConsumersComponent, canActivate: [AuthGuard] },
-  { path: 'consumer-dashboard', component: ConsumerDashboardComponent, canActivate: [AuthGuard] },
-  { path: 'deviceinfo', component: DeviceInfoComponent, canActivate: [AuthGuard] },
-  { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
-  { path: 'alert', component: AlertComponent, canActivate: [AuthGuard] },
-  { path: 'complaint', component: ComplaintComponent, canActivate: [AuthGuard] },
-  { path: 'warehouse-dashboard', component: WarehouseDashboardComponent, canActivate: [AuthGuard] },
-  { path: 'admin-dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
-  { path: 'delivery-dashboard', component: DeliveryguyDashboardComponent, canActivate: [AuthGuard] },
-  { path: 'qrdelivery/:id', component: QrCodeScanComponent, canActivate: [AuthGuard] },
+
+  // Consumer Routes
+  {
+    path: 'qr-scanner',
+    component: QrScannerComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'consumers',
+    component: ConsumersComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'consumer-dashboard',
+    component: ConsumerDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'deviceinfo',
+    component: DeviceInfoComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'alert',
+    component: AlertComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+  {
+    path: 'complaint',
+    component: ComplaintComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+  },
+
+  // Warehouse Routes
+  {
+    path: 'warehouse-dashboard',
+    component: WarehouseDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'warehouse' }
+  },
+
+  // Admin Routes
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'admin' }
+  },
+
+  // Delivery Guy Routes
+  {
+    path: 'delivery-dashboard',
+    component: DeliveryguyDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'delivery' }
+  },
+  {
+    path: 'qrdelivery/:id',
+    component: QrCodeScanComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'delivery' }
+  },
 ];
 
 @NgModule({
