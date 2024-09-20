@@ -24,44 +24,44 @@ export const routes: Routes = [
   {
     path: 'qr-scanner',
     component: QrScannerComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'consumers',
     component: ConsumersComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'consumer-dashboard',
     component: ConsumerDashboardComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'deviceinfo',
     component: DeviceInfoComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'feedback',
     component: FeedbackComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'alert',
     component: AlertComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
   {
     path: 'complaint',
     component: ComplaintComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
   },
 
   // Warehouse Routes
