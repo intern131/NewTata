@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## capacitor 
+
+To use capacitor in this project and to install android / ios use below commands
+1. Command to install capacitor `npm install @capacitor/core @capacitor/cli`
+2. To install android/ios platform in project use 
+   Android : `npm install @capacitor/android` 
+   IOS : `npm install @capacitor/ios`
+
+   Use below command to add native platforms in project 
+   Android : `npx cap add android`
+   IOS : `npx cap add ios`
+3. To set up capacitor in project use `npx cap init`
+4. To install plugins in project use `npm install plugin_name`
+   Example : To add bluetooth plugin use `npm install cordova-plugin-bluetoothle`
+5. To Synce
