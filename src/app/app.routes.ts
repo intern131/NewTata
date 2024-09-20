@@ -39,26 +39,22 @@ export const routes: Routes = [
   {
     path: 'deviceinfo',
     component: DeviceInfoComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    
   },
   {
     path: 'feedback',
     component: FeedbackComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    
   },
   {
     path: 'alert',
     component: AlertComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    
   },
   {
     path: 'complaint',
     component: ComplaintComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    
   },
 
   // Warehouse Routes
@@ -87,8 +83,7 @@ export const routes: Routes = [
   {
     path: 'qrdelivery/:id',
     component: QrCodeScanComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'delivery' }
+    
   },
 ];
 
