@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-<<<<<<< HEAD
-import { Router, RouterLink } from '@angular/router';
-=======
 import { Router,RouterLink } from '@angular/router';
->>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
 import { AuthService } from '../../auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { CommonModule } from '@angular/common';
@@ -17,11 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-login',
   standalone: true,
-<<<<<<< HEAD
-  imports: [CommonModule, MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule, RouterLink],
-=======
   imports: [CommonModule, MatIconModule, MatButtonModule, MatInputModule, MatFormFieldModule, ReactiveFormsModule,RouterLink],
->>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
