@@ -129,30 +129,65 @@ export const routes: Routes = [
   {
     path: 'qr-scanner',
     component: QrScannerComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'consumers',
     component: ConsumersComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'consumer-dashboard',
     component: ConsumerDashboardComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'deviceinfo',
     component: DeviceInfoComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'feedback',
     component: FeedbackComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'alert',
     component: AlertComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
   {
     path: 'complaint',
     component: ComplaintComponent,
+<<<<<<< HEAD
+=======
+    //canActivate: [AuthGuard],
+    //data: { expectedRole: 'consumer' }
+>>>>>>> a2d0f6acaa2ac56543213b1f29b7f1cf84c40fd4
   },
 
   // Warehouse Routes
