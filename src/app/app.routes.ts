@@ -32,11 +32,6 @@ export const routes: Routes = [
     
   },
   {
-    path: 'consumer-dashboard',
-    component: ConsumerDashboardComponent,
-    
-  },
-  {
     path: 'deviceinfo',
     component: DeviceInfoComponent,
     
@@ -56,7 +51,13 @@ export const routes: Routes = [
     component: ComplaintComponent,
     
   },
-
+  {
+    path: 'consumer-dashboard',
+    component: ConsumerDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'consumer' }
+    
+  },
   // Warehouse Routes
   {
     path: 'warehouse-dashboard',
