@@ -54,8 +54,8 @@ export const routes: Routes = [
   {
     path: 'consumer-dashboard',
     component: ConsumerDashboardComponent,
-    canActivate: [AuthGuard],
-    data: { expectedRole: 'consumer' }
+    // canActivate: [AuthGuard],
+    // data: { expectedRole: 'consumer' }
     
   },
   // Warehouse Routes
