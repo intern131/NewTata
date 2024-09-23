@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NavbarComponent } from '../../common/navbar/navbar.component';
+
 import { Router } from '@angular/router';
 import { NavbarAdminComponent } from "../../common/navbar-admin/navbar-admin.component";
 
@@ -16,7 +16,7 @@ export class AdminDashboardComponent {
 
   constructor(private router: Router) {}
 
-  navigateTo(route: string) {
-    this.router.navigate([`/${route}`]);
-  }
+  // navigateTo(route: string) {
+  //   this.router.navigate([`/${route}`]);
+  // }
 }

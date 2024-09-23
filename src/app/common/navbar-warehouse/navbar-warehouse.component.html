@@ -1,9 +1,9 @@
 <div class="consumer-dashboard">
     <!-- Navbar with hamburger, company logo, and profile icon -->
     <div class="navbar">
-      <button class="hamburger-button" (click)="toggleMenu()">
+      <!-- <button class="hamburger-button" (click)="toggleMenu()">
         <img src="../../../assets/navbar/Frame 29.svg" alt="Hamburger Icon" />
-      </button>
+      </button> -->
       <div class="company-details">
         <img src="../../../assets/navbar/Group 32.svg" alt="Company Logo" class="company-logo" />
       </div>
@@ -31,7 +31,7 @@
     </div>
   
     <!-- Sidebar menu for the hamburger -->
-    <div class="sidebar-menu" [ngClass]="{ 'open': isMenuOpen }">
+    <!-- <div class="sidebar-menu" [ngClass]="{ 'open': isMenuOpen }">
       <ul>
         <li (click)="goBack()">
           <img src="../../../assets/back-blue.svg" alt="Back Icon" />
@@ -46,7 +46,7 @@
         <li routerLink="/delivery-guys">
           <img src="../../../assets/Delivery ICOn.png" alt="delivery Icon" />
           <span>Delivery</span>
-        </li>
+        </li> 
 
         <li routerLink="/warehouse-guys">
           <img src="../../../assets/Construction and tools.png" alt="warehouse Icon" />
@@ -56,7 +56,7 @@
 
         
       </ul>
-    </div>
+    </div>-->
   
     <!-- Overlay for the sidebar and profile menu -->
     <div class="overlay" [ngClass]="{ 'open': isMenuOpen || isProfileMenuOpen }"></div>

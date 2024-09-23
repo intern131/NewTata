@@ -14,6 +14,8 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { DeliveryguyDashboardComponent } from './dashboard/deliveryguy-dashboard/deliveryguy-dashboard.component';
 import { QrCodeScanComponent } from './pages/delivery/qr-code-scan/qr-code-scan.component';
 import { AuthGuard } from './auth.guard';
+import { WarehouseGuyComponent } from './pages/admin/warehouse-guy/warehouse-guy.component';
+import { DeliveryGuyComponent } from './pages/admin/delivery-guy/delivery-guy.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -86,6 +88,15 @@ export const routes: Routes = [
     component: QrCodeScanComponent,
     
   },
+
+  {
+    path:"warehouse-guys",
+    component: WarehouseGuyComponent
+  },
+  {
+    path:"delivery-guys",
+    component: DeliveryGuyComponent
+  }
 ];
 
 @NgModule({
